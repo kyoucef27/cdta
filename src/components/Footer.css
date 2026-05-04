@@ -1,0 +1,160 @@
+#footer-bottom-section {
+  background-color: #0a0a0a;
+  color: #a3a3a3;
+  padding: 80px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-dm);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow effect for the footer background */
+#footer-bottom-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.site-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.ft-about .top-logo {
+  max-height: 50px;
+  margin-bottom: 24px;
+  filter: brightness(0) invert(1); /* Make logo white */
+}
+
+.ft-about p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #888;
+  max-width: 500px;
+}
+
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.fm-social h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-icons li a:hover {
+  transform: translateY(-5px);
+  background-color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 10px 20px -5px rgba(208, 2, 27, 0.3);
+}
+
+/* Specific social colors on hover if preferred, but uniform accent looks cleaner */
+.social-icons li a.facebook:hover { background-color: #3b579a; border-color: #3b579a; box-shadow: 0 10px 20px -5px rgba(59, 87, 154, 0.3); }
+.social-icons li a.twitter:hover { background-color: #1da1f2; border-color: #1da1f2; box-shadow: 0 10px 20px -5px rgba(29, 161, 242, 0.3); }
+.social-icons li a.linkedin:hover { background-color: #0077b5; border-color: #0077b5; box-shadow: 0 10px 20px -5px rgba(0, 119, 181, 0.3); }
+.social-icons li a.youtube:hover { background-color: #ff0000; border-color: #ff0000; box-shadow: 0 10px 20px -5px rgba(255, 0, 0, 0.3); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  font-size: 13px;
+  color: #666;
+}
+
+.fb-contact ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.fb-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fb-contact li i {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.fb-contact li a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.fb-contact li a:hover {
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  .footer-top, .footer-middle {
+    grid-template-columns: 1fr;
+    display: grid;
+    gap: 40px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+  
+  .fb-contact ul {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

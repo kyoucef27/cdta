@@ -6,6 +6,7 @@ import { EventsManager } from './dashboard/EventsManager';
 import { NewsManager } from './dashboard/NewsManager';
 import { ServicesManager } from './dashboard/ServicesManager';
 import { NavManager } from './dashboard/NavManager';
+import { MessagesManager } from './dashboard/MessagesManager';
 import { PageService } from '../services/page.service';
 import { EventService } from '../services/event.service';
 import { NewsService } from '../services/news.service';
@@ -15,7 +16,7 @@ import { useDashboard } from '../contexts/DashboardContext';
 import { useEffect } from 'react';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
-type Section = 'overview' | 'pages' | 'events' | 'news' | 'services' | 'navigation';
+type Section = 'overview' | 'pages' | 'events' | 'news' | 'services' | 'navigation' | 'messages';
 
 interface NavItem {
   id: Section;
@@ -88,6 +89,16 @@ const navItems: NavItem[] = [
     icon: (
       <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.9} d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    ),
+  },
+  {
+    id: 'messages',
+    label: 'Messages',
+    color: '#a855f7',
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.9} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
       </svg>
     ),
   },
@@ -241,6 +252,7 @@ export const Dashboard = () => {
       case 'news':     return <NewsManager />;
       case 'services': return <ServicesManager />;
       case 'navigation': return <NavManager />;
+      case 'messages': return <MessagesManager />;
     }
   };
 

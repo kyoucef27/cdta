@@ -32,7 +32,16 @@ export const fetchClient = async (endpoint: string, options: RequestInit = {}) =
       }
     }
     const errorData = await response.json().catch(() => null);
-    throw new Error(errorData?.message || 'Something went wrong');
+    
+    let errorMessage = errorData?.message || 'Something went wrong';
+    if (errorData?.errors) {
+      const firstError = Object.values(errorData.errors)[0];
+      if (Array.isArray(firstError) && firstError.length > 0) {
+        errorMessage = String(firstError[0]);
+      }
+    }
+    
+    throw new Error(errorMessage);
   }
 
   // Handle 204 No Content or empty responses

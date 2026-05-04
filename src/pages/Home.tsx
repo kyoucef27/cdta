@@ -58,7 +58,7 @@ export const Home = () => {
         <div style={{
           position: 'absolute', top: '20%', left: '30%', width: 500, height: 500,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%)',
           pointerEvents: 'none', filter: 'blur(100px)',
         }} />
 

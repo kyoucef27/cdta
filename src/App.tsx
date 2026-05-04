@@ -12,8 +12,11 @@ import { NewsArticle } from './pages/NewsArticle';
 import { DynamicPage } from './pages/DynamicPage';
 import { Login } from './pages/Login';
 import { Dashboard } from './pages/Dashboard';
+import { Contact } from './pages/Contact';
+import { EventArticle } from './pages/EventArticle';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { NotFound } from './pages/NotFound';
+import { Footer } from './components/Footer';
 
 function AppRoutes() {
   const location = useLocation();
@@ -38,9 +41,12 @@ function AppRoutes() {
         <Route path="/events" element={<EventsList />} />
         <Route path="/news" element={<NewsList />} />
         <Route path="/news/:id" element={<NewsArticle />} />
+        <Route path="/events/:id" element={<EventArticle />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/:slug" element={<DynamicPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </>
   );
 }

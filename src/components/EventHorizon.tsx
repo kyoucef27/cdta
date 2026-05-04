@@ -41,7 +41,7 @@ const LightningParticles = () => {
         this.maxLife = Math.random() * 20 + 10;
         this.life = this.maxLife;
         this.size = Math.random() * 1.5 + 0.5;
-        const colors = ['#e0f2fe', '#bae6fd', '#7dd3fc', '#ffffff'];
+        const colors = ['#f5f3ff', '#ddd6fe', '#c4b5fd', '#ffffff'];
         this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
@@ -130,10 +130,10 @@ const LightningParticles = () => {
         // Flickering effect based on life
         const alpha = (this.life % 2 === 0) ? 0.9 : 0.3;
         
-        ctx.strokeStyle = `rgba(186, 230, 253, ${alpha})`;
+        ctx.strokeStyle = `rgba(221, 214, 254, ${alpha})`;
         ctx.lineWidth = Math.random() * 2 + 1;
         ctx.shadowBlur = 12;
-        ctx.shadowColor = '#38bdf8';
+        ctx.shadowColor = '#a855f7';
         ctx.stroke();
         
         // Inner white core
@@ -239,7 +239,7 @@ export const EventHorizon = () => {
             fontSize: 34, fontWeight: 700, color: '#ffffff', 
             fontFamily: '"DM Serif Display", serif', marginBottom: 8,
             letterSpacing: '-0.01em',
-            textShadow: '0 0 20px rgba(56, 189, 248, 0.3)'
+            textShadow: '0 0 20px rgba(168, 85, 247, 0.3)'
           }}>
             Upcoming Events
           </h2>
@@ -296,7 +296,7 @@ export const EventHorizon = () => {
                 <div className="event-date-badge" style={{
                   width: 50, height: 50, borderRadius: 12,
                   background: '#1e293b',
-                  border: '1px solid rgba(56, 189, 248, 0.15)',
+                  border: '1px solid rgba(168, 85, 247, 0.15)',
                   display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                   color: '#fff', fontWeight: 700, flexShrink: 0,
                   transition: 'all 0.3s ease'
@@ -332,7 +332,7 @@ export const EventHorizon = () => {
 
                 <div className="event-learn-more" style={{ 
                   display: 'flex', alignItems: 'center', gap: 6, 
-                  color: '#38bdf8', fontSize: 13, fontWeight: 600, 
+                  color: '#a855f7', fontSize: 13, fontWeight: 600, 
                   letterSpacing: '0.02em', transition: 'text-shadow 0.3s ease' 
                 }}>
                   Learn More
@@ -352,13 +352,13 @@ export const EventHorizon = () => {
             from 0deg,
             transparent 0%,
             transparent 40%,
-            rgba(56, 189, 248, 0.2) 45%,
-            #38bdf8 49%,
+            rgba(168, 85, 247, 0.2) 45%,
+            #a855f7 49%,
             #ffffff 50%,
             transparent 51%,
             transparent 90%,
-            rgba(56, 189, 248, 0.2) 95%,
-            #38bdf8 99%,
+            rgba(168, 85, 247, 0.2) 95%,
+            #a855f7 99%,
             #ffffff 100%
           );
           animation: spinParticle 4s linear infinite;
@@ -380,10 +380,10 @@ export const EventHorizon = () => {
         }
 
         .event-card-clean:hover .event-date-badge {
-          background: #38bdf8 !important;
-          border-color: #7dd3fc !important;
-          color: #0f172a !important;
-          box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+          background: #a855f7 !important;
+          border-color: #c4b5fd !important;
+          color: #ffffff !important;
+          box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
         }
 
         .event-card-clean:hover .event-date-badge span {
@@ -391,8 +391,8 @@ export const EventHorizon = () => {
         }
 
         .event-card-clean:hover .event-learn-more {
-          text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
-          color: #7dd3fc !important;
+          text-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
+          color: #c4b5fd !important;
         }
       `}</style>
     </section>
